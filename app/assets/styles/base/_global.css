@@ -1,0 +1,40 @@
+* {
+  box-sizing: border-box;
+  background-color: black;
+}
+
+.scroll {
+  vertical-align: center;
+  &__up {
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  background-color: #FFF;
+  position: fixed;
+  right: 50px;
+  top: 48%;
+  }
+
+  &__middle {
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  background-color: #FFF;
+  position: fixed;
+  right: 50px;
+  top: 50%;
+  }
+
+  &__bottom {
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  background-color: #FFF;
+  position: fixed;
+  right: 50px;
+  top: 52%;
+  }
+  &-item--orange {
+    background-color: orange;
+  }
+}
