@@ -1,16 +1,47 @@
 import $ from 'jquery';
 import waypoints from '../../../../node_modules/waypoints/lib/noframework.waypoints';
-import smoothScroll from 'jquery-smooth-scroll';
 
 class DottedPage {
   constructor() {
-    this.scrollItems = $(".scroll-item");
+    this.scrollUp = $('.scroll__up');
+    this.scrollMiddle = $('.scroll__middle');
+    this.scrollBottom = $('.scroll__bottom');
     this.createSectionWaypoints();
-    this.addSmoothScrolling();
   }
 
-  addSmoothScrolling() {
-    this.scrollItems.smoothScroll();
+  createSectionWaypoints() {
+    var self = this;
+    var waypoint = new Waypoint({
+      element: document.getElementById('two'),
+      handler: function(direction) {
+        self.scrollUp.toggleClass('scroll-item--orange');
+        self.scrollMiddle.toggleClass('scroll-item--orange');
+  }
+    })
+    var waypoint2 = new Waypoint({
+      element: document.getElementById('three'),
+      handler: function(direction) {
+        self.scrollMiddle.toggleClass('scroll-item--orange');
+        self.scrollBottom.toggleClass('scroll-item--orange');
+  }
+    })
+  }
+}
+
+/*
+var waypoint = new Waypoint({
+  element: document.getElementById('three'),
+  handler: function(direction) {
+    var scrollUp = $('.scroll__up');
+    scroll__up.removeClass('scroll-item--orange');
+  }
+})
+
+class DottedPage {
+  constructor() {
+    this.scrollItems = $("section");
+    this.headerLinks = $(".scroll a children");
+    this.createSectionWaypoints();
   }
 
   createSectionWaypoints() {
@@ -23,11 +54,10 @@ class DottedPage {
         handler: function(direction) {
           if (direction == "down") {
             var matchingHeaderLink = currentSection.getAttribute("data-matching-link");
-            self.headerLinks.removeClass("is-current-link");
-            $(matchingHeaderLink).addClass("is-current-link");
+            self.headerLinks.removeClass("scroll-item--orange");
+            $(matchingHeaderLink).addClass("scroll-item--orange");
           }
-        },
-        offset: "18%"
+        }
       });
 
       new Waypoint({
@@ -35,17 +65,16 @@ class DottedPage {
         handler: function(direction) {
           if (direction == "up") {
             var matchingHeaderLink = currentSection.getAttribute("data-matching-link");
-            self.headerLinks.removeClass("is-current-link");
-            $(matchingHeaderLink).addClass("is-current-link");
+            self.headerLinks.removeClass("scroll-item--orange");
+            $(matchingHeaderLink).addClass("scroll-item--orange");
           }
-        },
-        offset: "-40%"
+        }
       });
     });
   }
 
 }
-
+*/
 
 export default DottedPage;
 

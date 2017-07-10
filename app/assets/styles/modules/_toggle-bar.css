@@ -1,0 +1,43 @@
+.toggle-bar {
+  position: relative;
+  width: 100%;
+  bottom: -10px;
+  height: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  &__image {
+    background-color: transparent;
+    height: 100px;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    bottom: 70px;
+    left: 30px;
+    z-index: 3;
+  }
+
+  &__horizontal {
+    width: 80%;
+    height: 15px;
+    background-color: #435063;
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+    position: absolute;
+    bottom: 120px;
+    left: 100px;
+    z-index: 2;
+  }
+
+  &__links a {
+    font-size: 17px;
+    text-decoration: none;
+    color: #FFF;
+    position: relative;
+    bottom: 70px;
+    left: 120px;
+    margin-right: 20%;
+    
+  }
+}

@@ -1,4 +1,6 @@
 @import 'normalize.css';
 @import './base/_global';
 @import './modules/_wrapper';
-@import './modules/_fslide';
+@import './modules/_slides';
+@import './modules/_toggle-bar';
+@import './modules/_nav';

@@ -1,0 +1,29 @@
+.nav {
+  background: transparent;
+  position: absolute;
+  z-index: 100; 
+  bottom: 1rem; 
+  padding: 1rem 5rem 0 5rem; 
+  width: 100%;  
+  margin: auto; 
+  align-items: center; 
+  left: 50%; 
+  transform: translateX(-50%); 
+}
+
+.nav li {
+  background: transparent;
+  flex: 1;
+  display: inline-block;
+  list-style: none;  
+  margin-right: 15rem; 
+}
+
+.nav a {
+  background: transparent;
+  display: block;
+  color: #FFF;
+  text-decoration: none;
+}
+
+
