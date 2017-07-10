@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 2);
+/******/ 	return __webpack_require__(__webpack_require__.s = 1);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -9891,6 +9891,26 @@ return jQuery;
 "use strict";
 
 
+var _DottedPage = __webpack_require__(2);
+
+var _DottedPage2 = _interopRequireDefault(_DottedPage);
+
+var _jquery = __webpack_require__(0);
+
+var _jquery2 = _interopRequireDefault(_jquery);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+__webpack_require__(4);
+var dottedPage = new _DottedPage2.default();
+
+/***/ }),
+/* 2 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -9926,15 +9946,27 @@ var DottedPage = function () {
       var waypoint = new Waypoint({
         element: document.getElementById('two'),
         handler: function handler(direction) {
-          self.scrollUp.toggleClass('scroll-item--orange');
-          self.scrollMiddle.toggleClass('scroll-item--orange');
+          if (direction == "down") {
+            self.scrollUp.removeClass('scroll-item--orange');
+            self.scrollMiddle.addClass('scroll-item--orange');
+          } else {
+            self.scrollMiddle.removeClass('scroll-item--orange');
+            self.scrollBottom.removeClass('scroll-item--orange');
+            self.scrollUp.addClass('scroll-item--orange');
+          }
         }
+
       });
       var waypoint2 = new Waypoint({
         element: document.getElementById('three'),
         handler: function handler(direction) {
-          self.scrollMiddle.toggleClass('scroll-item--orange');
-          self.scrollBottom.toggleClass('scroll-item--orange');
+          if (direction == "down") {
+            self.scrollMiddle.removeClass('scroll-item--orange');
+            self.scrollBottom.addClass('scroll-item--orange');
+          } else {
+            self.scrollMiddle.addClass('scroll-item--orange');
+            self.scrollBottom.removeClass('scroll-item--orange');
+          }
         }
       });
     }
@@ -9943,76 +9975,7 @@ var DottedPage = function () {
   return DottedPage;
 }();
 
-/*
-var waypoint = new Waypoint({
-  element: document.getElementById('three'),
-  handler: function(direction) {
-    var scrollUp = $('.scroll__up');
-    scroll__up.removeClass('scroll-item--orange');
-  }
-})
-
-class DottedPage {
-  constructor() {
-    this.scrollItems = $("section");
-    this.headerLinks = $(".scroll a children");
-    this.createSectionWaypoints();
-  }
-
-  createSectionWaypoints() {
-    var self = this;
-    this.scrollItems.each(function() {
-      
-      var currentSection = this;
-      new Waypoint({
-        element: currentSection,
-        handler: function(direction) {
-          if (direction == "down") {
-            var matchingHeaderLink = currentSection.getAttribute("data-matching-link");
-            self.headerLinks.removeClass("scroll-item--orange");
-            $(matchingHeaderLink).addClass("scroll-item--orange");
-          }
-        }
-      });
-
-      new Waypoint({
-        element: currentSection,
-        handler: function(direction) {
-          if (direction == "up") {
-            var matchingHeaderLink = currentSection.getAttribute("data-matching-link");
-            self.headerLinks.removeClass("scroll-item--orange");
-            $(matchingHeaderLink).addClass("scroll-item--orange");
-          }
-        }
-      });
-    });
-  }
-
-}
-*/
-
 exports.default = DottedPage;
-
-/***/ }),
-/* 2 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _DottedPage = __webpack_require__(1);
-
-var _DottedPage2 = _interopRequireDefault(_DottedPage);
-
-var _jquery = __webpack_require__(0);
-
-var _jquery2 = _interopRequireDefault(_jquery);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-__webpack_require__(4);
-__webpack_require__(1);
-var dottedPage = new _DottedPage2.default();
 
 /***/ }),
 /* 3 */
